@@ -1,0 +1,254 @@
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--color-acent);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    background: var(--color-background);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.panel-main {
+    margin: auto;
+    width: 1440px;
+}
+.backbar {
+    background: var(--color-background-top);
+    border: 0px solid;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+}
+h1 {
+    margin-bottom: -0.5rem;
+}
+.switcher {
+    font-weight: 700;
+}
+.switch {
+    position: relative;
+    margin: 0 0 10px 5px;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-switch);
+    transition: .3s;
+    border-radius: 34px;
+  }
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 17px;
+    width: 17px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-primary);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+input:checked + .slider:before {
+
+    transform: translateX(26px);
+  }
+.panel-top {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+.panel-top-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    background: var(--color-primary);
+    width: 265px;
+    padding: 30px 30px;
+    border-top:5px solid;
+    position:relative;
+}
+.panel-top-items:hover , .panel-bot-items:hover {
+    background: var(--color-primary-hover);
+    transition: .3s;
+}
+.panel-bot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 1.5rem;
+    margin: 40px 0; 
+}
+.panel-bot-items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 265px;
+    height: 100px;
+    padding: 20px 30px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--color-primary);
+}
+
+.data {
+    flex: 1 0 40%;
+    margin: 5px;
+}
+
+.follow-stat {
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: -10px;
+}
+.follow-in-stat {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: -10px;
+}
+.spacer {
+    color: var(--color-secondary);
+    letter-spacing: 7px;
+}
+.account {
+    display: flex;
+    justify-content: center;
+}
+.icon {
+    margin: auto 0;
+}
+.user {
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-left: 10px;
+}
+.up:before {
+	content: url('../images/icon-up.svg');
+    margin-top: -2px;
+    margin-left: -15px;
+    position: absolute;
+    animation: ani-up 1s infinite;
+}
+
+.up {
+    font-weight: 700;
+    color: hsl(163, 72%, 41%);
+    margin-left: 15px;
+}
+
+@keyframes ani-up {
+    0% {
+        margin-top: -2px;
+    }
+    50% {
+        margin-top: -4px;
+    }
+    100% {
+        margin-top: -2px;
+    }
+  }
+
+.down:before {
+	content: url('../images/icon-down.svg');
+    margin-top: -2px;
+    margin-left: -15px;
+    position: absolute;
+    animation: ani-down 1s infinite;
+    
+}
+  @keyframes ani-down {
+    0% {
+        margin-top: -2px;
+    }
+    50% {
+        margin-top: -4px;
+    }
+    100% {
+        margin-top: -2px;
+    }
+  }
+
+.down {
+    font-weight: 700;
+    color: hsl(356, 69%, 56%); 
+    margin-left: 15px;
+}
+
+.sub-header {
+    font-weight: 700;
+    color: var(--color-secondary);
+}
+.rounded {
+    overflow: hidden;
+    border-radius: 5px;
+}
+.facebook:before , .twitter:before , .instagram:before , .youtube:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -5px;
+    left: 0;
+}
+.facebook:before {
+    background: hsl(208, 92%, 53%);
+}
+.twitter:before {
+    background: hsl(203, 89%, 53%);
+}
+.instagram:before {
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+.youtube:before {
+    background: hsl(348, 97%, 39%);
+}
+
+.dark-mode {
+    --color-background: hsl(230, 17%, 14%);
+    --color-background-top: hsl(232, 19%, 15%);
+    --color-primary: hsl(228, 28%, 20%);
+    --color-primary-hover: hsl(229, 25%, 26%);
+    --color-secondary: hsl(228, 34%, 66%);
+    --color-acent: hsl(0, 0%, 100%);
+    --color-switch: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.light-mode {
+    --color-background: hsl(0, 0%, 100%);
+    --color-background-top: hsl(225, 100%, 98%);
+    --color-primary: hsl(227, 47%, 96%);
+    --color-primary-hover: hsl(226, 39%, 89%);
+    --color-secondary: hsl(228, 12%, 44%);
+    --color-acent: hsl(230, 17%, 14%);
+    --color-switch: hsl(230, 22%, 74%);
+}
